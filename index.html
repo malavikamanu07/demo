@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malavika Manoj | Personal Profile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f7f2;
+            color: #303b35;
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 9%;
+            background: #f8f7f2;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e8e7df;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #45534a;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #899b85;
+        }
+
+        /* Hero section */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 12%;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 580px;
+        }
+
+        .tag {
+            color: #81947e;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.2;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        h1 span {
+            color: #899d87;
+        }
+
+        .hero p {
+            color: #68736c;
+            font-size: 16px;
+            max-width: 480px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 12px 25px;
+            background: #667c69;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #435b49;
+            transform: translateY(-3px);
+        }
+
+        .profile-image {
+            width: 290px;
+            height: 350px;
+            background: #e3e7dd;
+            border-radius: 150px 150px 10px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Common sections */
+
+        section {
+            padding: 85px 12%;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .section-line {
+            width: 55px;
+            height: 3px;
+            background: #899d87;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            background: #eef0e9;
+        }
+
+        .about p {
+            max-width: 750px;
+            color: #626e65;
+        }
+
+        /* Education */
+
+        .education-card {
+            background: #eeefe9;
+            padding: 28px;
+            border-left: 4px solid #899d87;
+            border-radius: 5px;
+            max-width: 650px;
+        }
+
+        .education-card h3 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .education-card p {
+            color: #68736c;
+            font-size: 14px;
+        }
+
+        /* Skills */
+
+        .skills {
+            background: #eef0e9;
+        }
+
+        .skill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #ffffff;
+            border: 1px solid #e1e5dc;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #667c69;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        /* Activities */
+
+        .activity-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .activity-card {
+            background: #eeefe9;
+            padding: 25px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .activity-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .activity-card p {
+            color: #68736c;
+            font-size: 14px;
+        }
+
+        /* Contact */
+
+        .contact {
+            background: #eef0e9;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #68736c;
+        }
+
+        .contact a {
+            color: #667c69;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            font-size: 13px;
+            color: #7b847d;
+        }
+
+        /* Animation */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile responsive */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 55px 8%;
+            }
+
+            .hero p {
+                margin: auto;
+            }
+
+            .profile-image {
+                width: 220px;
+                height: 260px;
+            }
+
+            section {
+                padding: 60px 8%;
+            }
+
+            .activity-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <div class="logo">MM.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Home -->
+
+    <div class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="tag">Welcome to my space</div>
+
+            <h1>
+                Hello, I'm <span>Malavika</span>.
+            </h1>
+
+            <p>
+                A Data Science student with an interest in technology,
+                creativity and continuous learning. Exploring new ideas,
+                developing skills and building my own journey.
+            </p>
+
+            <a href="#about" class="btn">Explore My Profile</a>
+
+        </div>
+
+        <div class="profile-image">
+            <!-- Add your photograph here -->
+            <img src="profile.jpg" alt="Malavika's profile picture"
+                 onerror="this.style.display='none'">
+        </div>
+
+    </div>
+
+
+    <!-- About -->
+
+    <section class="about reveal" id="about">
+
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+
+        <p>
+            I am currently pursuing a B.Sc. in Data Science with Mathematics
+            at Christ (Deemed to be) University, Bengaluru.
+
+            I enjoy exploring technology, learning programming and
+            understanding how data can be used to solve real-world problems.
+
+            Apart from academics, I enjoy creative activities, drawing,
+            sports and participating in university activities.
+
+            I believe in learning through experiences and continuously
+            improving myself.
+        </p>
+
+    </section>
+
+
+    <!-- Education -->
+
+    <section class="reveal" id="education">
+
+        <h2 class="section-title">Education</h2>
+        <div class="section-line"></div>
+
+        <div class="education-card">
+
+            <h3>B.Sc. Data Science with Mathematics</h3>
+
+            <p>Christ (Deemed to be) University</p>
+
+            <p>Bengaluru, Karnataka</p>
+
+            <p>2025 – 2028</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section class="skills reveal" id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+        <div class="section-line"></div>
+
+        <div class="skill-container">
+
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">SQL</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">HTML</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Communication</div>
+            <div class="skill">Creative Thinking</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Activities -->
+
+    <section class="reveal" id="activities">
+
+        <h2 class="section-title">Beyond Academics</h2>
+        <div class="section-line"></div>
+
+        <div class="activity-container">
+
+            <div class="activity-card">
+
+                <h3>Kho Kho</h3>
+
+                <p>
+                    Member of the University Kho Kho Team.
+                    Developing teamwork, discipline and sportsmanship.
+                </p>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Volunteering</h3>
+
+                <p>
+                    Involved in student welfare activities and
+                    hospitality volunteering.
+                </p>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Creative Interests</h3>
+
+                <p>
+                    Interested in drawing, creativity and exploring
+                    different artistic ideas.
+                </p>
+
+            </div>
+
+            <div class="activity-card">
+
+                <h3>Music</h3>
+
+                <p>
+                    Previously part of the University Choir,
+                    exploring my interest in music.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section class="contact reveal" id="contact">
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <div class="section-line" style="margin: 15px auto 25px;"></div>
+
+        <p>
+            Interested in connecting, collaborating or sharing ideas?
+        </p>
+
+        <p style="margin-top: 15px;">
+            Email:
+            <a href="mailto:yourmail@example.com">
+                yourmail@example.com
+            </a>
+        </p>
+
+        <p style="margin-top: 10px;">
+            LinkedIn:
+            <a href="#" target="_blank">My LinkedIn Profile</a>
+        </p>
+
+        <p style="margin-top: 10px;">
+            GitHub:
+            <a href="#" target="_blank">My GitHub Profile</a>
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+        © 2026 Malavika Manoj | Designed with care.
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        const sections = document.querySelectorAll(".reveal");
+
+        function revealSections() {
+
+            sections.forEach(section => {
+
+                const position = section.getBoundingClientRect().top;
+
+                if (position < window.innerHeight - 100) {
+                    section.classList.add("active");
+                }
+
+            });
+
+        }
+
+        window.addEventListener("scroll", revealSections);
+
+        revealSections();
+
+    </script>
+
+</body>
+</html>
